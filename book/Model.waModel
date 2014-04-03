@@ -1,0 +1,657 @@
+
+{
+	"toJSON" : true,
+	"extraProperties" : 
+	{
+		"version" : "2",
+		"classes" : 
+		{
+			"Paket" : 
+			{
+				"panelColor" : "#8DB3E2",
+				"panel" : 
+				{
+					"isOpen" : "true",
+					"pathVisible" : true,
+					"position" : 
+					{
+						"X" : 683,
+						"Y" : 10
+					}
+				}
+			},
+			"Customer" : 
+			{
+				"panelColor" : "#B8CCE4",
+				"panel" : 
+				{
+					"isOpen" : "true",
+					"pathVisible" : true,
+					"position" : 
+					{
+						"X" : 459,
+						"Y" : 171
+					}
+				}
+			},
+			"Country" : 
+			{
+				"panelColor" : "#4FA997",
+				"panel" : 
+				{
+					"isOpen" : "true",
+					"pathVisible" : true,
+					"position" : 
+					{
+						"X" : 217,
+						"Y" : 5
+					}
+				}
+			},
+			"Pemesanan" : 
+			{
+				"panelColor" : "#C3D69B",
+				"panel" : 
+				{
+					"isOpen" : "true",
+					"pathVisible" : true,
+					"position" : 
+					{
+						"X" : 238,
+						"Y" : 222
+					}
+				}
+			},
+			"Breakfast" : 
+			{
+				"panelColor" : "#548DD4",
+				"panel" : 
+				{
+					"isOpen" : "true",
+					"pathVisible" : true,
+					"position" : 
+					{
+						"X" : 10,
+						"Y" : 6
+					}
+				}
+			},
+			"Kasur" : 
+			{
+				"panelColor" : "#4FA997",
+				"panel" : 
+				{
+					"isOpen" : "true",
+					"pathVisible" : true,
+					"position" : 
+					{
+						"X" : 10,
+						"Y" : 200
+					}
+				}
+			},
+			"Kamar" : 
+			{
+				"panelColor" : "#B7DDE8",
+				"panel" : 
+				{
+					"isOpen" : "true",
+					"pathVisible" : true,
+					"position" : 
+					{
+						"X" : 645,
+						"Y" : 305
+					}
+				}
+			},
+			"Detailkamar" : 
+			{
+				"panelColor" : "#BFBFBF",
+				"panel" : 
+				{
+					"isOpen" : "true",
+					"pathVisible" : true,
+					"position" : 
+					{
+						"X" : 21,
+						"Y" : 413
+					}
+				}
+			}
+		},
+		"model" : 
+		{
+			"scriptMode" : "manual",
+			"workspaceLeft" : 0,
+			"workspaceTop" : 205,
+			"relationCurve" : 
+			{
+				"run" : true,
+				"mode" : 1
+			},
+			"lastScriptLocation" : 
+			{
+				"Pemesanan" : 
+				{
+					"events" : "Pemesanan/Pemesanan-events.js"
+				}
+			}
+		}
+	},
+	"dataClasses" : 
+	[
+		{
+			"name" : "Breakfast",
+			"className" : "Breakfast",
+			"collectionName" : "BreakfastCollection",
+			"scope" : "public",
+			"attributes" : 
+			[
+				{
+					"name" : "ID",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"unique" : true,
+					"autosequence" : true,
+					"type" : "long",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "nama",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "gambar",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "image"
+				},
+				{
+					"name" : "keterangan",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "harga",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "long"
+				}
+			],
+			"key" : 
+			[
+				{
+					"name" : "ID"
+				}
+			]
+		},
+		{
+			"name" : "Country",
+			"className" : "Country",
+			"collectionName" : "CountryCollection",
+			"scope" : "public",
+			"attributes" : 
+			[
+				{
+					"name" : "ID",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"unique" : true,
+					"autosequence" : true,
+					"type" : "long",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "nama",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "customerCollection",
+					"kind" : "relatedEntities",
+					"scope" : "public",
+					"type" : "CustomerCollection",
+					"reversePath" : true,
+					"path" : "country"
+				}
+			],
+			"key" : 
+			[
+				{
+					"name" : "ID"
+				}
+			]
+		},
+		{
+			"name" : "Customer",
+			"className" : "Customer",
+			"collectionName" : "CustomerCollection",
+			"scope" : "public",
+			"attributes" : 
+			[
+				{
+					"name" : "ID",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"unique" : true,
+					"autosequence" : true,
+					"type" : "long",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "company",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "address",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "city",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "post_code",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "country",
+					"kind" : "relatedEntity",
+					"scope" : "public",
+					"type" : "Country",
+					"path" : "Country"
+				},
+				{
+					"name" : "phone",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "number"
+				},
+				{
+					"name" : "email",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "message",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "full_name",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				}
+			],
+			"key" : 
+			[
+				{
+					"name" : "ID"
+				}
+			]
+		},
+		{
+			"name" : "Detailkamar",
+			"className" : "Detailkamar",
+			"collectionName" : "DetailkamarCollection",
+			"scope" : "public",
+			"attributes" : 
+			[
+				{
+					"name" : "ID",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"unique" : true,
+					"autosequence" : true,
+					"type" : "long",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "nama_kamar",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "harga",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "long"
+				},
+				{
+					"name" : "jumlah_kamar",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "long"
+				},
+				{
+					"name" : "mulai",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "date",
+					"simpleDate" : false
+				},
+				{
+					"name" : "dari",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "date",
+					"simpleDate" : false
+				}
+			],
+			"key" : 
+			[
+				{
+					"name" : "ID"
+				}
+			]
+		},
+		{
+			"name" : "Kamar",
+			"className" : "Kamar",
+			"collectionName" : "KamarCollection",
+			"scope" : "public",
+			"attributes" : 
+			[
+				{
+					"name" : "ID",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"unique" : true,
+					"autosequence" : true,
+					"type" : "long",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "nama_kamar",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "gambar",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "image"
+				},
+				{
+					"name" : "keterangan",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "harga",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "long"
+				},
+				{
+					"name" : "allpemesanan",
+					"kind" : "relatedEntities",
+					"scope" : "public",
+					"type" : "PemesananCollection",
+					"reversePath" : true,
+					"path" : "nama_kamar"
+				},
+				{
+					"name" : "jumlah_kamar",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "long"
+				}
+			],
+			"key" : 
+			[
+				{
+					"name" : "ID"
+				}
+			]
+		},
+		{
+			"name" : "Kasur",
+			"className" : "Kasur",
+			"collectionName" : "KasurCollection",
+			"scope" : "public",
+			"attributes" : 
+			[
+				{
+					"name" : "ID",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"unique" : true,
+					"autosequence" : true,
+					"type" : "long",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "nama",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "gambar",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "image"
+				},
+				{
+					"name" : "keterangan",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "harga",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "long"
+				}
+			],
+			"key" : 
+			[
+				{
+					"name" : "ID"
+				}
+			]
+		},
+		{
+			"name" : "Paket",
+			"className" : "Paket",
+			"collectionName" : "PaketCollection",
+			"scope" : "public",
+			"attributes" : 
+			[
+				{
+					"name" : "ID",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"unique" : true,
+					"autosequence" : true,
+					"type" : "long",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "nama_paket",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "gambar",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "image"
+				},
+				{
+					"name" : "keterangan",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "harga",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "long"
+				},
+				{
+					"name" : "allPemesanan",
+					"kind" : "relatedEntities",
+					"scope" : "public",
+					"type" : "PemesananCollection",
+					"reversePath" : true,
+					"path" : "nama_paket"
+				}
+			],
+			"key" : 
+			[
+				{
+					"name" : "ID"
+				}
+			]
+		},
+		{
+			"name" : "Pemesanan",
+			"className" : "Pemesanan",
+			"collectionName" : "PemesananCollection",
+			"scope" : "public",
+			"attributes" : 
+			[
+				{
+					"name" : "ID",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"unique" : true,
+					"autosequence" : true,
+					"type" : "long",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "nomor_booking",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "kode_unik",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "long"
+				},
+				{
+					"name" : "nama_kamar",
+					"kind" : "relatedEntity",
+					"scope" : "public",
+					"type" : "Kamar",
+					"path" : "Kamar"
+				},
+				{
+					"name" : "customer",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "email_customer",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "tgl_masuk",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "tgl_keluar",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "jumlah_orang",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "number"
+				},
+				{
+					"name" : "nama_paket",
+					"kind" : "relatedEntity",
+					"scope" : "public",
+					"type" : "Paket",
+					"path" : "Paket"
+				},
+				{
+					"name" : "harga",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "long"
+				},
+				{
+					"name" : "jumlah_hari",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "long",
+					"events" : 
+					[
+						{
+							"kind" : "onValidate",
+							"from" : "model.Pemesanan.jumlah_hari.events.onValidate",
+							"userDefined" : true
+						}
+					]
+				},
+				{
+					"name" : "jumlah_breakfast",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "long"
+				},
+				{
+					"name" : "total_addons",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "long"
+				},
+				{
+					"name" : "grandtotal",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "long"
+				}
+			],
+			"key" : 
+			[
+				{
+					"name" : "ID"
+				}
+			]
+		}
+	]
+}

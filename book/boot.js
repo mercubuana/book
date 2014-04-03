@@ -1,0 +1,1 @@
+﻿addHttpRequestHandler('/sendMail','handler.js','sendMail'); 
